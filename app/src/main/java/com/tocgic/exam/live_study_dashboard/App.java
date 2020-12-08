@@ -3,12 +3,17 @@
  */
 package com.tocgic.exam.live_study_dashboard;
 
+import com.tocgic.exam.live_study_dashboard.repo.github.GitHubRepository;
+
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "tocgic/live-study-dashboard, markDown code.\n";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        DashBoard dashBoard = new DashBoard(18, new GitHubRepository("tocgic/live-study-dashboard"));
+        System.out.println(dashBoard.toMarkDown(dashBoard.getParticipantList()));
     }
 }
